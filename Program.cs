@@ -10,19 +10,13 @@ namespace FizzBuzzAscii
         static void Main(string[] args)
         {
 
-
-
             PrinterAscii printer = new PrinterAscii();
             printer.Print("Welcome", "[mediumpurple2]");
             printer.Print("to the", "[bold lightskyblue1]");
             printer.Print("FizzBuzz Generator!", "[bold darkolivegreen2]");
 
 
-
-
             Console.WriteLine();
-
-
 
             var fizzBuzz = AnsiConsole.Prompt(
             new TextPrompt<int>("[bold yellow2]From 1 to what number you want to generate the FizzBuzz?[/]")
@@ -68,12 +62,18 @@ namespace FizzBuzzAscii
             var panel = new Panel($"[bold lime]{FiggleFonts.Standard.Render("That's all folks!")}[/]");
             panel.Border = BoxBorder.Double;
             AnsiConsole.Render(panel);
-
+            AnsiConsole.Markup("[red]Press ENTER to exit[/]");
+            Console.ReadLine();
         }
     }
 
     class PrinterAscii
     {
+        /// <summary>
+        /// Method to print the string in Ascii style   
+        /// </summary>
+        /// <param name="value">The string you want to print</param>
+        /// <param name="style">The style according to the spectro.console styling nuget package</param>
         public void Print(String value, String style)
         {
             AnsiConsole.Markup($"{style}{FiggleFonts.Standard.Render(value)}[/]");
@@ -81,3 +81,12 @@ namespace FizzBuzzAscii
     }
 
 }
+
+
+
+/* 
+Command to generete the single .exe file
+dotnet publish -r win-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=false 
+/p:SelfContained=false --output "C:\Users\PC\Desktop"
+
+ */
