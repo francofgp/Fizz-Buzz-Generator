@@ -7,7 +7,7 @@
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 ![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)
-  
+
 </div>
 FizzBuzz Generator is a console program made in C# where you can specified the number (for example from 1 to 100) to resolve the FizzBuzz problem.
 
@@ -91,4 +91,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+![](https://vistr.dev/badge?repo=francofgp.Fizz-Buzz-Generator)
