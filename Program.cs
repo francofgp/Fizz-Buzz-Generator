@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using Figgle;
 using Spectre.Console;
 
 namespace FizzBuzzAscii
@@ -11,11 +10,11 @@ namespace FizzBuzzAscii
         {
 
             var printer = new PrinterAscii();
+
+            printer.SimilateWork();
             printer.Print("Welcome", "[mediumpurple2]");
             printer.Print("to the", "[bold lightskyblue1]");
             printer.Print("FizzBuzz Generator!", "[bold darkolivegreen2]");
-
-
             Console.WriteLine();
 
             var fizzBuzz = AnsiConsole.Prompt(
@@ -58,28 +57,9 @@ namespace FizzBuzzAscii
                 Thread.Sleep(100);
 
             }
-
-            var panel = new Panel($"[bold lime]{FiggleFonts.Standard.Render("That's all folks!")}[/]");
-            panel.Border = BoxBorder.Double;
-            AnsiConsole.Render(panel);
-            AnsiConsole.Markup("[red]Press ENTER to exit[/]");
-            Console.ReadLine();
+            printer.GoodBye("That's all folks");
         }
     }
-
-    class PrinterAscii
-    {
-        /// <summary>
-        /// Method to print the string in Ascii style   
-        /// </summary>
-        /// <param name="value">The string you want to print</param>
-        /// <param name="style">The style according to the spectro.console styling nuget package</param>
-        public void Print(string value, string style)
-        {
-            AnsiConsole.Markup($"{style}{FiggleFonts.Standard.Render(value)}[/]");
-        }
-    }
-
 }
 
 
@@ -87,6 +67,6 @@ namespace FizzBuzzAscii
 /* 
 Command to generete the single .exe file
 dotnet publish -r win-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=false 
-/p:SelfContained=false --output "C:\Users\PC\Desktop"
+/p:SelfContained=false --output "D:\Downloads"
 
  */
