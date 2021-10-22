@@ -8,9 +8,24 @@ namespace FizzBuzzAscii
     public class PrinterAscii : IPrintOutput
     {
 
+        public int Speed { get; set; } = 100;
+
+        public PrinterAscii(int Speed)
+        {
+            this.Speed = Speed;
+        }
+
+
         public void Print(string value, string style)
         {
             AnsiConsole.Markup($"{style}{FiggleFonts.Standard.Render(value)}[/]");
+            Thread.Sleep(Speed);
+        }
+
+        public void Info(string value)
+        {
+            AnsiConsole.Markup($"[underline deepskyblue1]{value}[/] ");
+            Thread.Sleep(Speed);
         }
 
 

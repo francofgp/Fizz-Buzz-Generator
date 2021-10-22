@@ -9,6 +9,7 @@ namespace FizzBuzzAscii
         /// <param name="style">The style according to the spectro.console styling nuget package</param>
         void Print(string value, string style);
 
+        void Info(string value);
 
         void GoodBye(string message);
         void SimilateWork();
